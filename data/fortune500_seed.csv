@@ -1,0 +1,66 @@
+rank,name,ticker,industry,revenue_billions
+1,Walmart,WMT,Retail,648.1
+2,Amazon,AMZN,Technology & Retail,514.0
+3,Apple,AAPL,Technology,383.3
+4,Berkshire Hathaway,BRK-B,Financials,364.5
+5,UnitedHealth Group,UNH,Healthcare,324.2
+6,McKesson,MCK,Healthcare Distribution,276.0
+7,Cencora,COR,Healthcare Distribution,238.6
+8,Cigna Group,CI,Healthcare,195.3
+9,CVS Health,CVS,Healthcare,357.8
+10,ExxonMobil,XOM,Energy,398.7
+11,Alphabet,GOOGL,Technology,282.8
+12,Microsoft,MSFT,Technology,211.9
+13,Costco Wholesale,COST,Retail,226.9
+14,Cardinal Health,CAH,Healthcare Distribution,205.0
+15,JPMorgan Chase,JPM,Financials,162.4
+16,General Motors,GM,Automotive,171.8
+17,Ford Motor,F,Automotive,176.2
+18,AT&T,T,Telecommunications,122.4
+19,Chevron,CVX,Energy,200.0
+20,Meta Platforms,META,Technology,116.6
+21,Comcast,CMCSA,Media & Telecom,121.4
+22,Valero Energy,VLO,Energy,177.0
+23,Bank of America,BAC,Financials,98.6
+24,Phillips 66,PSX,Energy,175.7
+25,Marathon Petroleum,MPC,Energy,180.1
+26,Target,TGT,Retail,109.1
+27,NVIDIA,NVDA,Technology,44.9
+28,Johnson & Johnson,JNJ,Healthcare,85.2
+29,Pfizer,PFE,Healthcare,58.5
+30,Merck,MRK,Healthcare,60.1
+31,Home Depot,HD,Retail,157.4
+32,Wells Fargo,WFC,Financials,82.6
+33,Verizon,VZ,Telecommunications,136.8
+34,Boeing,BA,Aerospace & Defense,66.6
+35,PepsiCo,PEP,Consumer Staples,91.5
+36,Coca-Cola,KO,Consumer Staples,45.8
+37,Goldman Sachs,GS,Financials,47.4
+38,Morgan Stanley,MS,Financials,54.1
+39,Walt Disney,DIS,Media & Entertainment,88.9
+40,Netflix,NFLX,Media & Entertainment,33.7
+41,Intel,INTC,Technology,54.2
+42,Advanced Micro Devices,AMD,Technology,22.7
+43,Caterpillar,CAT,Industrial,59.4
+44,Deere & Company,DE,Industrial & Agriculture,61.3
+45,3M,MMM,Industrial Conglomerate,32.7
+46,FedEx,FDX,Logistics,90.2
+47,UPS,UPS,Logistics,97.3
+48,Starbucks,SBUX,Consumer Staples,35.9
+49,Nike,NKE,Consumer Discretionary,51.2
+50,IBM,IBM,Technology,60.5
+51,Cisco Systems,CSCO,Technology,57.0
+52,Oracle,ORCL,Technology,49.9
+53,Salesforce,CRM,Technology,34.9
+54,Texas Instruments,TXN,Technology,17.5
+55,American Express,AXP,Financials,60.5
+56,Citigroup,C,Financials,78.5
+57,RTX Corporation,RTX,Aerospace & Defense,67.1
+58,AbbVie,ABBV,Healthcare,58.1
+59,Eli Lilly,LLY,Healthcare,28.5
+60,Lockheed Martin,LMT,Aerospace & Defense,66.0
+61,ConocoPhillips,COP,Energy,58.6
+62,Humana,HUM,Healthcare,106.4
+63,Eaton,ETN,Industrial,20.8
+64,Prologis,PLD,Real Estate,7.8
+65,Waste Management,WM,Industrial,20.4
