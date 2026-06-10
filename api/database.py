@@ -203,6 +203,41 @@ def _make_earnings_for(ticker: str, industry: str) -> list[dict]:
     return rows
 
 
+def seed_earnings_for_all_companies() -> None:
+    """Generate synthetic earnings for every company already in the companies collection."""
+    companies = list(companies_col().find(
+        {},
+        {"ticker": 1, "name": 1, "rank": 1, "industry": 1, "_id": 0},
+    ))
+    if not companies:
+        return
+
+    now = datetime.now(timezone.utc)
+    earnings_ops = []
+    for c in companies:
+        for row in _make_earnings_for(c["ticker"], c.get("industry", "")):
+            doc = {
+                **row,
+                "company_name":     c.get("name", c["ticker"]),
+                "company_rank":     c.get("rank"),
+                "industry":         c.get("industry"),
+                "revenue_billions": c.get("revenue_billions"),
+                "last_fetched":     now,
+            }
+            earnings_ops.append(
+                UpdateOne(
+                    {"ticker": row["ticker"], "date": row["date"]},
+                    {"$setOnInsert": doc},
+                    upsert=True,
+                )
+            )
+
+    if earnings_ops:
+        earnings_col().bulk_write(earnings_ops, ordered=False)
+
+    logger.info("Seeded synthetic earnings for %d companies.", len(companies))
+
+
 def seed_from_csv() -> None:
     """Load Fortune 500 companies and generate synthetic earnings from the seed CSV."""
     if not SEED_CSV.exists():
@@ -267,8 +302,12 @@ def ensure_seeded() -> None:
     if is_empty() or os.environ.get("FORCE_RESEED") == "true":
         logger.info("DB is empty — attempting live S&P 500 population from slickcharts...")
         try:
+            import sys as _sys
+            _sys.path.insert(0, str(Path(__file__).parent.parent))
             from scripts.update_companies import update_companies
             update_companies()
+            # update_companies only populates companies; seed synthetic earnings too
+            seed_earnings_for_all_companies()
             logger.info("Live population complete.")
         except Exception as exc:
             logger.warning("Live population failed (%s); falling back to seed CSV.", exc)
